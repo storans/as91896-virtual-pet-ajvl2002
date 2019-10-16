@@ -12,3 +12,4 @@ food_values = {"carrot": 0.2, "broccoli": 0.2, "kale": 0.1, "grass": 0.3}
 print()
 print("Main menu")
 print("Please select a number from the list below and type the number into the space provided")
+#
