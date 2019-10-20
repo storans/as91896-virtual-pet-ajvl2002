@@ -5,7 +5,7 @@ try:
 except ValueError:
    print("That is a great name for your virtual pet rabbit!")
 
-   # print("{} is a healthy weight!".format(name))
+print("{} is a healthy weight!".format(name))
 
 
 
