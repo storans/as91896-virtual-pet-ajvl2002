@@ -47,7 +47,7 @@ def show_items(dictionary_name):
         number += 1
 
 def item_chosen(name_list):
-    choice = check_int("Please choose an option from the following forms of exercise:", "Please choose a number between 1 and 3.", 1, 3)
+    choice = check_int("Please choose an option from the following forms of exercise - enter a number between 1 and 3:", "Please choose a number between 1 and 3.", 1, 3)
     print()
     choice = choice - 1
     item_chosen = name_list[choice][1]
@@ -64,8 +64,8 @@ def calc_weight(total_weight, choice, name_list):
 weight = 1.5
 max_weight = 2
 min_weight = 1
-FOOD_DICTIONARY = {"carrot": 0.3, "broccoli": 0.2, "kale": 0.1, "grass": 0.3, "2 carrots": 0.6}
-FOOD_LIST = [["carrot", 0.3], ["broccoli", 0.2], ["kale", 0.1], ["grass", 0.3], ["2 carrots", 0.6]]
+FOOD_DICTIONARY = {"carrot": 0.2, "broccoli": 0.2, "kale": 0.1, "grass": 0.3, "2 carrots": 0.4}
+FOOD_LIST = [["carrot", 0.2], ["broccoli", 0.2], ["kale", 0.1], ["grass", 0.3], ["2 carrots", 0.4]]
 EXERCISE_DICTIONARY = {"hop": 0.2, "run": 0.3, "walk": 0.1}
 EXERCISE_LIST = [["hop", 0.2], ["run", 0.3], ["walk", 0.1]]
 
@@ -83,20 +83,21 @@ while pet_alive:
     # main_menu
 
     print()
-    print("Main menu:")
+    formatter("*", "Main menu:")
     print("1. Check {}'s weight - Please feed or exercise {} first\n"
           "2. Feed {}\n"
           "3. Exercise {}\n"
           "4. Help\n"
           "5. Exit virtual pet\n".format(name, name, name, name))
-    menu_choice = check_int("Enter the number of your choice:", "Please choose a number between 1 and 5.", 1, 5)
+    menu_choice = check_int("Enter the number of your choice - a number between 1 and 5:", "Please choose a number between 1 and 5.", 1, 5)
     print()
 
 
     # Check virtual pets weight
     if menu_choice == 1:
         if weight == 1.5:
-            print("You need to feed or exercise {} before you can check {}'s weight".format(name, name))
+            formatter("!", "You need to feed or exercise {} before you can check {}'s weight".format(name, name))
+            #print("You need to feed or exercise {} before you can check {}'s weight".format(name, name))
         else:
             print("{} weighs {}kg".format(name, weight))
 
@@ -122,7 +123,7 @@ while pet_alive:
         print("{} weighs {}kgs".format(name, weight))
         if weight >= 2 or weight <= 1:
             pet_alive = False
-            print("We are sorry to inform you but {}} has died because {} had had to much to eat and not enough exercise".format(name, name))
+            print("We are sorry to inform you but {} has died because {} had had to much to eat and not enough exercise".format(name, name))
         elif pet_alive == True:
             print("Now {} needs to be fed! Please use the main menu and feed {}.".format(name, name))
 
