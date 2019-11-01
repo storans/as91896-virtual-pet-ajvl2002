@@ -129,7 +129,8 @@ while pet_alive:
             formatter("!", "You need to feed or exercise {} before you can check {}'s weight.".format(name, name))
             #print("You need to feed or exercise {} before you can check {}'s weight".format(name, name))
         else:
-            print("{} weighs {}kg.".format(name, weight))
+            formatter("!", "{} weighs {}kg.".format(name, weight))
+            #print("{} weighs {}kg.".format(name, weight))
 
 
     # feed pet
