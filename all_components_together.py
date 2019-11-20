@@ -1,3 +1,5 @@
+# Final version
+# This is a virtual pet program that allows you to have a virtual pet rabbit and feed and exercise it.
 # puts stars or exclamation points around words if the formatter is used
 def formatter(character, output):
     print(character * (len(output) + 8))
@@ -112,7 +114,7 @@ while pet_alive:
     print()
     # main menu
     formatter("*", "Main menu:")
-    print("1. Check {}'s weight - Please feed or exercise {} first.\n"
+    print("1. Check {}'s weight.\n"
           "2. Feed {}.\n"
           "3. Exercise {}.\n"
           "4. Help.\n"
@@ -126,8 +128,7 @@ while pet_alive:
     if menu_choice == 1:
         # if the weight is 1.5 the pet has not been fed or exercised so it tells the user to do that before using this
         if weight == 1.5:
-            formatter("!", "You need to feed or exercise {} before you can check {}'s weight.".format(name, name))
-            #print("You need to feed or exercise {} before you can check {}'s weight".format(name, name))
+            formatter("!", "{} weighs 1.5kg".format(name))
         else:
             formatter("!", "{} weighs {}kg.".format(name, weight))
             #print("{} weighs {}kg.".format(name, weight))
@@ -157,7 +158,7 @@ while pet_alive:
         # if the pet weighs 2kg or above or 1kg or less then the pet dies
         if weight >= 2 or weight <= 1:
             pet_alive = False
-            formatter("=", "We are sorry to inform you but {} has died, because {} became an unhealthy weight because {} had had to much to eat and not enough exercise.".format(name, name, name))
+            formatter("=", "We are sorry to inform you but {} has died, because {} exercised to much.".format(name, name, name))
         # if the pet is still alive do this...
         elif pet_alive == True:
             print("Now {} needs to be fed! Please use the main menu and feed {}.".format(name, name))
@@ -192,4 +193,3 @@ while pet_alive:
         tracking_on = False
         print("Thanks for playing!")
         break
-
